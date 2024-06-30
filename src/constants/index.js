@@ -1,4 +1,4 @@
-export const navLinksdata = [
+export const navLinksData = [
     {
       _id: 1001,
       title: "Home",
