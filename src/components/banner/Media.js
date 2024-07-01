@@ -1,6 +1,7 @@
 import React from 'react'
 import { FaInstagram, FaLinkedinIn, FaReact } from "react-icons/fa"
 import { SiFlutter, SiFirebase, SiCanva } from "react-icons/si"
+import { BsGithub } from 'react-icons/bs'
 const Media = () => {
     return (
         <div className="flex flex-col xl:flex-row gap-6 lgl:gap-0 justify-between">
@@ -14,6 +15,9 @@ const Media = () => {
                     </span>
                     <span onClick={() => { window.open('https://www.linkedin.com/in/esat-%C3%B6zkan-05b3821b8/', '_blank'); }} className="bannerIcon">
                         <FaLinkedinIn />
+                    </span>
+                    <span onClick={() => { window.open('https://github.com/esatozkan', '_blank'); }} className="bannerIcon">
+                        <BsGithub />
                     </span>
                 </div>
             </div>
