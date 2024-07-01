@@ -2,7 +2,6 @@ import React from 'react'
 import { useTypewriter, Cursor } from 'react-simple-typewriter'
 import { FaInstagram, FaLinkedinIn, FaReact } from "react-icons/fa"
 import { SiFlutter, SiFirebase, SiCanva } from "react-icons/si"
-import { CiMail } from "react-icons/ci"
 
 function LeftBanner() {
     const [text] = useTypewriter({
@@ -40,9 +39,6 @@ function LeftBanner() {
                         Find me in
                     </h2>
                     <div className='flex gap-4'>
-                        <span className='bannerIcon'>
-                            <CiMail />
-                        </span>
                         <span className='bannerIcon'>
                             <FaInstagram />
                         </span>
