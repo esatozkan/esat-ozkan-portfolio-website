@@ -1,5 +1,6 @@
 import React from 'react'
 import { FaInstagram, FaLinkedinIn } from "react-icons/fa"
+import { BsGithub } from 'react-icons/bs'
 import contactImg from "../../assets/contactImg.png"
 
 const ContactLeft = () => {
@@ -30,6 +31,9 @@ const ContactLeft = () => {
           </span>
           <span onClick={() => { window.open('https://www.linkedin.com/in/esat-%C3%B6zkan-05b3821b8/', '_blank'); }} className="bannerIcon">
             <FaLinkedinIn />
+          </span>
+          <span onClick={() => { window.open('https://github.com/esatozkan', '_blank'); }} className="bannerIcon">
+            <BsGithub />
           </span>
         </div>
       </div>
