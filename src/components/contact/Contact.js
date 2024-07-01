@@ -1,8 +1,11 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import Title from '../layouts/Title';
 import LeftContact from './LeftContact';
+import emailjs from "@emailjs/browser";
+import { toast } from "sonner";
 
 const Contact = () => {
+    const form = useRef();
     const [username, setUsername] = useState("");
     const [phoneNumber, setPhoneNumber] = useState("");
     const [email, setEmail] = useState("");
@@ -11,13 +14,11 @@ const Contact = () => {
     const [errMsg, setErrMsg] = useState("");
     const [successMsg, setSuccessMsg] = useState("");
 
-    // ========== Email Validation start here ==============
     const emailValidation = () => {
         return String(email)
             .toLocaleLowerCase()
             .match(/^\w+([-]?\w+)*@\w+([-]?\w+)*(\.\w{2,3})+$/);
     };
-    // ========== Email Validation end here ================
 
     const handleSend = (e) => {
         e.preventDefault();
@@ -34,15 +35,29 @@ const Contact = () => {
         } else if (message === "") {
             setErrMsg("Message is required!");
         } else {
-            setSuccessMsg(
-                `Thank you dear ${username}, Your Messages has been sent Successfully!`
-            );
-            setErrMsg("");
-            setUsername("");
-            setPhoneNumber("");
-            setEmail("");
-            setSubject("");
-            setMessage("");
+
+            emailjs
+                .sendForm('service_1xysmhe', 'template_zwgeqbe', form.current, {
+                    publicKey: 'ezaL7hHYBZk85IeN_',
+                })
+                .then(
+                    () => {
+                        setSuccessMsg(
+                            `Thank you dear ${username}, Your Messages has been sent Successfully!`
+                        );
+                        setErrMsg("");
+                        setUsername("");
+                        setPhoneNumber("");
+                        setEmail("");
+                        setSubject("");
+                        setMessage("");
+                    },
+                    (error) => {
+                        toast.warning("Something Went Wrong")
+                    },
+                );
+
+
         }
     };
     return (
@@ -57,7 +72,7 @@ const Contact = () => {
                 <div className="w-full h-auto flex flex-col lgl:flex-row justify-between">
                     <LeftContact />
                     <div className="w-full lgl:w-[60%] h-full py-10 bg-gradient-to-r from-[#1e2024] to-[#23272b] flex flex-col gap-8 p-4 lgl:p-8 rounded-lg shadow-shadowOne">
-                        <form className="w-full flex flex-col gap-4 lgl:gap-6 py-2 lgl:py-5">
+                        <form ref={form} className="w-full flex flex-col gap-4 lgl:gap-6 py-2 lgl:py-5">
                             {errMsg && (
                                 <p className="py-3 bg-gradient-to-r from-[#1e2024] to-[#23272b] shadow-shadowOne text-center text-orange-500 text-base tracking-wide animate-bounce">
                                     {errMsg}
@@ -76,6 +91,7 @@ const Contact = () => {
                                     <input
                                         onChange={(e) => setUsername(e.target.value)}
                                         value={username}
+                                        name='name'
                                         className={`${errMsg === "Username is required!" &&
                                             "outline-designColor"
                                             } contactInput`}
@@ -89,6 +105,7 @@ const Contact = () => {
                                     <input
                                         onChange={(e) => setPhoneNumber(e.target.value)}
                                         value={phoneNumber}
+                                        name='phoneNumber'
                                         className={`${errMsg === "Phone number is required!" &&
                                             "outline-designColor"
                                             } contactInput`}
@@ -103,6 +120,7 @@ const Contact = () => {
                                 <input
                                     onChange={(e) => setEmail(e.target.value)}
                                     value={email}
+                                    name='email'
                                     className={`${errMsg === "Please give your Email!" &&
                                         "outline-designColor"
                                         } contactInput`}
@@ -116,6 +134,7 @@ const Contact = () => {
                                 <input
                                     onChange={(e) => setSubject(e.target.value)}
                                     value={subject}
+                                    name='subject'
                                     className={`${errMsg === "Plese give your Subject!" &&
                                         "outline-designColor"
                                         } contactInput`}
@@ -129,6 +148,7 @@ const Contact = () => {
                                 <textarea
                                     onChange={(e) => setMessage(e.target.value)}
                                     value={message}
+                                    name='message'
                                     className={`${errMsg === "Message is required!" && "outline-designColor"
                                         } contactTextArea`}
                                     cols="30"
@@ -137,6 +157,7 @@ const Contact = () => {
                             </div>
                             <div className="w-full">
                                 <button
+                                type='submit'
                                     onClick={handleSend}
                                     className="w-full h-12 bg-[#141518] rounded-lg text-base text-gray-400 tracking-wider uppercase hover:text-white duration-300 hover:border-[1px] hover:border-designColor border-transparent"
                                 >
