@@ -28,7 +28,10 @@ function LeftBanner() {
 
                     />
                 </h2>
-                <p className='text-base font-bodyFont leading-6 tracking-wide'>I use animation as a third dimension bt which to simplify experiences and kuiding thro each and every interaction. I'm not adding motion just to spruce things up, but doing it in ways that
+                <p className='text-base font-bodyFont leading-6 tracking-wide'>
+                    <span className="font-bold">4 years</span> of experience. I enjoy
+                    building <span className="italic">sites & apps</span>. My focus is{" "}
+                    <span className="underline">React and Flutter</span>.
                 </p>
             </div>
             <div className='flex justify-between'>
