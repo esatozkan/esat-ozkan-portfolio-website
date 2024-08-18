@@ -32,7 +32,7 @@ const ProjectsCard = ({ title, des, src, store, storeLink, appStore }) => {
                                     store === "playStore" ? <FaGooglePlay /> : <FaGlobe />
                                 }
                             </span>
-                            {appStore === "appStore" && <span onClick={() => { window.open(appStore, '_blank'); }} className="text-lg w-10 h-10 rounded-full bg-black inline-flex justify-center items-center text-gray-400 hover:text-designColor duration-300 cursor-pointer">
+                            {appStore === "https://apps.apple.com/tr/app/fiesta/id6502469402?l=tr" && <span onClick={() => { window.open(appStore, '_blank'); }} className="text-lg w-10 h-10 rounded-full bg-black inline-flex justify-center items-center text-gray-400 hover:text-designColor duration-300 cursor-pointer">
                                 <FaAppStore />
                             </span>}
                         </div>

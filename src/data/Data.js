@@ -68,8 +68,8 @@ export const projectData = [
         des: "An app that lets users enjoy time with friends. It includes various games like card games, forbidden word guessing, confession, and more. Users can snap moments while playing and save memories on their profiles.",
         src: fiesta,
         store: "playStore",
-        appStore: "appStore",
-        storeLink: ""
+        appStore: "https://apps.apple.com/tr/app/fiesta/id6502469402?l=tr",
+        storeLink: "https://play.google.com/store/apps/details?id=com.aeneasgames.fiesta"
     },
     {
         id: 5,
