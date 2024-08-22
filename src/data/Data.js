@@ -95,21 +95,21 @@ export const educationData = [
     {
         key: 1,
         title: "Atılım Anatolian High School",
-        subTitle: "Kocaeli/Izmit",
+        subTitle: "Kocaeli",
         date: "2015",
         des: "I completed my high school education at Atılım Anatolian High School."
     },
     {
         key: 2,
         title: "Istanbul University",
-        subTitle: "Istanbul/Avcılar",
+        subTitle: "Istanbul",
         date: "2017",
         des: "I studied industrial engineering at Istanbul University"
     },
     {
         key: 3,
         title: "Marmara University",
-        subTitle: "Istanbul/Avcılar",
+        subTitle: "Istanbul",
         date: "2019",
         des: "I studied mechanical engineering at Marmara University"
     },
