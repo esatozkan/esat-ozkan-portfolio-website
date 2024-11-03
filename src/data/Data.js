@@ -64,7 +64,7 @@ export const projectData = [
     },
     {
         id: 4,
-        title: "FİESTA",
+        title: "FİESTA ONLINE",
         des: "An app that lets users enjoy time with friends. It includes various games like card games, forbidden word guessing, confession, and more. Users can snap moments while playing and save memories on their profiles.",
         src: fiesta,
         store: "playStore",
